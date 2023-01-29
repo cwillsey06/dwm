@@ -73,6 +73,8 @@ static const char *togglmed[] = { "playerctl", "play-pause", NULL };
 static const char *nskipmed[] = { "playerctl", "next", NULL };
 static const char *pskipmed[] = { "playerctl", "previous", NULL };
 
+static const char *scrotcmd[] = { "sh -e $HOME/.scripts/scrot-clip -s", NULL};
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
@@ -118,6 +120,8 @@ static const Key keys[] = {
 	{ 0,                       XF86XK_AudioPlay, spawn, {.v = togglmed} },
 	{ 0,                       XF86XK_AudioNext, spawn, {.v = nskipmed} },
 	{ 0,                       XF86XK_AudioPrev, spawn, {.v = pskipmed} },
+	/* screenshot key */
+	{ 0, XK_Print, spawn, {.v = scrotcmd} },
 };
 
 /* button definitions */
