@@ -63,7 +63,7 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *firefox[]  = { "firefox", NULL };
-static const char *reload[]   = { "sh -e $HOME/.dwm/autostart.sh", NULL };
+static const char *reload[]   = { "/home/cwillsey/.dwm/autostart.sh", NULL };
 
 static const char *upvol[]   = { "pamixer", "-i", "5", NULL };
 static const char *downvol[] = { "pamixer", "-d", "5", NULL };
@@ -73,7 +73,7 @@ static const char *togglmed[] = { "playerctl", "play-pause", NULL };
 static const char *nskipmed[] = { "playerctl", "next", NULL };
 static const char *pskipmed[] = { "playerctl", "previous", NULL };
 
-static const char *scrotcmd[] = { "sh -e $HOME/.scripts/scrot-clip -s", NULL};
+static const char *scrotcmd[] = { "/home/cwillsey/.scripts/scrot-clip", "-s", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
