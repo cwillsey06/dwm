@@ -29,7 +29,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",     NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "Firefox",  NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
+	{ "Firefox",  NULL,     NULL,           0,         0,          0,          -1,        -1 },
 	{ "St",       NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,       NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
@@ -45,7 +45,7 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "=[]",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	/* { "[M]",      monocle }, */
 };
 
 /* key definitions */
@@ -73,7 +73,7 @@ static const char *togglmed[] = { "playerctl", "play-pause", NULL };
 static const char *nskipmed[] = { "playerctl", "next", NULL };
 static const char *pskipmed[] = { "playerctl", "previous", NULL };
 
-static const char *scrotcmd[] = { "/home/cwillsey/.scripts/scrot-clip", "-s", NULL};
+static const char *scrotcmd[] = { "/home/cwillsey/.local/bin/scrot-clip", "-s", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -113,15 +113,15 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = reload } },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	/* volume keys */
-	{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
-	{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
-	{ 0,                       XF86XK_AudioMute, spawn, {.v = mutevol } },
+	{ 0,        XF86XK_AudioRaiseVolume,       spawn,          {.v = upvol   } },
+	{ 0,        XF86XK_AudioLowerVolume,       spawn,          {.v = downvol } },
+	{ 0,               XF86XK_AudioMute,       spawn,          {.v = mutevol } },
 	/* media keys */
-	{ 0,                       XF86XK_AudioPlay, spawn, {.v = togglmed} },
-	{ 0,                       XF86XK_AudioNext, spawn, {.v = nskipmed} },
-	{ 0,                       XF86XK_AudioPrev, spawn, {.v = pskipmed} },
+	{ 0,               XF86XK_AudioPlay,       spawn,          {.v = togglmed} },
+	{ 0,               XF86XK_AudioNext,       spawn,          {.v = nskipmed} },
+	{ 0,               XF86XK_AudioPrev,       spawn,          {.v = pskipmed} },
 	/* screenshot key */
-	{ 0, XK_Print, spawn, {.v = scrotcmd} },
+	{ 0,                       XK_Print,       spawn,          {.v = scrotcmd} },
 };
 
 /* button definitions */
