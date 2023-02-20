@@ -16,7 +16,8 @@ static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#504945";
 static const char col_gray3[]       = "#bdae93";
 static const char col_gray4[]       = "#ebdbb2";
-static const char col_cyan[]        = "#cc241d";
+static const char col_cyan1[]       = "#458588";
+static const char col_cyan2[]       = "#076678";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -67,7 +68,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, topbar ? NULL : "-b", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan1, "-sf", col_gray4, "-shb", col_cyan2, topbar ? NULL : "-b", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *firefox[]  = { "firefox", NULL };
 static const char *reload[]   = { "/home/cwillsey/.dwm/autostart.sh", NULL };
