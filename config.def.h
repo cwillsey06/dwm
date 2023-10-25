@@ -76,7 +76,7 @@ static const char *togglmed[] = { "playerctl", "play-pause", NULL };
 static const char *nskipmed[] = { "playerctl", "next", NULL };
 static const char *pskipmed[] = { "playerctl", "previous", NULL };
 
-static const char *scrotcmd[] = { "/home/cwillsey/.local/bin/scrot-clip", "-s", NULL};
+static const char *scrotcmd[] = { "/home/coltrane/.local/bin/scrot.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
