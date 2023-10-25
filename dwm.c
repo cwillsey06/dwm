@@ -850,7 +850,7 @@ drawbar(Monitor *m)
 		stw = getsystraywidth();
 
 	/* draw status first so it can be overdrawn by tags later */
-	if (m == selmon) { /* status is only drawn on selected monitor */
+	if (m == selmon || 1) { /* status is only drawn on selected monitor */
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		tw = TEXTW(stext) - lrpad / 2 + 2; /* 2px extra right padding */
 		drw_text(drw, m->ww - tw - stw, 0, tw, bh, lrpad / 2 - 2, stext, 0);
@@ -1139,7 +1139,7 @@ incnmaster(const Arg *arg)
 	for(i=0; i<LENGTH(tags); ++i)
 		if(selmon->tagset[selmon->seltags] & 1<<i)
 			selmon->pertag->nmasters[i+1] = selmon->nmaster;
-	
+
 	if(selmon->pertag->curtag == 0)
 	{
 		selmon->pertag->nmasters[0] = selmon->nmaster;
@@ -1747,13 +1747,13 @@ setlayout(const Arg *arg)
 	for(i=0; i<LENGTH(tags); ++i)
 		if(selmon->tagset[selmon->seltags] & 1<<i)
 		{
-			selmon->pertag->ltidxs[i+1][selmon->sellt] = selmon->lt[selmon->sellt]; 
+			selmon->pertag->ltidxs[i+1][selmon->sellt] = selmon->lt[selmon->sellt];
 			selmon->pertag->sellts[i+1] = selmon->sellt;
 		}
-	
+
 	if(selmon->pertag->curtag == 0)
 	{
-		selmon->pertag->ltidxs[0][selmon->sellt] = selmon->lt[selmon->sellt]; 
+		selmon->pertag->ltidxs[0][selmon->sellt] = selmon->lt[selmon->sellt];
 		selmon->pertag->sellts[0] = selmon->sellt;
 	}
 
@@ -2348,9 +2348,11 @@ updatesizehints(Client *c)
 void
 updatestatus(void)
 {
+	Monitor* m;
 	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
 		strcpy(stext, "dwm-"VERSION);
-	drawbar(selmon);
+	for(m = mons; m; m = m->next)
+		drawbar(m);
 	updatesystray();
 }
 
