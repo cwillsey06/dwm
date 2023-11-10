@@ -6,3 +6,5 @@
   https://dwm.suckless.org/patches/attachbelow
 * pertag-withsel
   https://dwm.suckless.org/patches/pertag
+* statusallmons
+  https://dwm.suckless.org/patches/statusallmons
