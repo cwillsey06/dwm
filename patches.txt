@@ -4,3 +4,5 @@
   https://dwm.suckless.org/patches/actualfullscreen
 * attachbelow
   https://dwm.suckless.org/patches/attachbelow
+* pertag-withsel
+  https://dwm.suckless.org/patches/pertag
