@@ -1,0 +1,2 @@
+* leftstack
+  https://dwm.suckless.org/patches/leftstack/
