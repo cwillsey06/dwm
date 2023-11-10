@@ -10,3 +10,5 @@
   https://dwm.suckless.org/patches/statusallmons
 * doublepressquit
   https://dwm.suckless.org/patches/doublepressquit
+* resizecorners
+  https://dwm.suckless.org/patches/resizecorners
