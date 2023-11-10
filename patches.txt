@@ -1,2 +1,4 @@
 * leftstack
   https://dwm.suckless.org/patches/leftstack/
+* actualfullscreen
+  https://dwm.suckless.org/patches/actualfullscreen
