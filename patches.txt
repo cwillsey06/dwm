@@ -12,3 +12,5 @@
   https://dwm.suckless.org/patches/doublepressquit
 * resizecorners
   https://dwm.suckless.org/patches/resizecorners
+* refreshrate
+  https://dwm.suckless.org/patches/refreshrate
