@@ -26,7 +26,7 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static char lockfile[] = "/tmp/dwm.lock";
 
 static const Rule rules[] = {
-  0
+	{"floating", NULL, NULL, 0, 1, -1},
 };
 
 /* layout(s) */
